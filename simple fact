@@ -1,6 +1,7 @@
 likes(ram,mango). girl(seema). red(rose). likes(bill ,cindy). owns(john ,gold)
 
 
+
 ?- likes(ram,What).
 What = mango.
 ?- liked(Who,cindy).
