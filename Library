@@ -1,0 +1,34 @@
+book('The Hobbit', 'J.R.R. Tolkien', 1937, 2). 
+book('1984', 'George Orwell', 1949, 3). 
+book('To Kill a Mockingbird', 'Harper Lee', 1960, 5). 
+book('The Catcher in the Rye', 'J.D. Salinger', 1951, 1). 
+
+student('Alice'). 
+student('Bob'). 
+student('Charlie'). 
+
+taken('The Hobbit', 'Alice', '2023-10-25', '2023-11-10'). 
+taken('1984', 'Bob', '2023-10-20', '2023-11-05'). 
+taken('To Kill a Mockingbird', 'Charlie', '2023-10-22', '2023-11-08'). 
+
+author(Author, Title) :- 
+    book(Title, Author, _, _). 
+
+in_stock(Title, InStock) :- 
+    book(Title, _, _, InStock). 
+
+available(Title, Available) :- 
+    book(Title, _, _, Total), 
+    findall(Student, taken(Title, Student, _, _), Taken), 
+    length(Taken, TakenCount), 
+    Available is Total - TakenCount.
+
+
+
+
+
+
+
+author(Author, The_Hobbit).
+taken(1984,Student,TakenDate,ReturnDate).
+in_stock(1984, InStock).
