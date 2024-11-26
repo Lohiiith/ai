@@ -1,13 +1,19 @@
-likes(ram,mango). girl(seema). red(rose). likes(bill ,cindy). owns(john ,gold)
+delicious(cakes). delicious(pickles). spicy(pickles).
+relishes(priya, coffee).
+% here Food is a variable likes(priya, Food):-delicious(Food).
+likes(prakash, Food):- spicy(Food), delicious(Food).
 
 
 
-?- likes(ram,What).
-What = mango.
-?- liked(Who,cindy).
-Who = bill.
-red(What).
-What = rose.
-owns(Who,What).
-Who = john,
-What = gold.
+
+
+
+
+
+
+
+?- delicious(pickles). true.
+?- spicy(pickles). true.
+?- relishes(priya,coffee). true.
+?- delicious(Food). Food = cakes ;
+Food = pickles.
